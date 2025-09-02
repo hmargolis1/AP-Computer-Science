@@ -3,19 +3,21 @@ public class Beanbag
     private int wheels;
     private double legs;
     private boolean cushion;
-    private char firstLetterOfColor;
+    private char color;
     private String size;
     private String location;
+    public int poundsOfLining;
     public Beanbag()
     {
         wheels = 4;
         legs = 3.58;
         cushion = true;
-        firstLetterOfColor = 'b';
+        color = 'b';
         size = "large";  
         location = "Library";
+        poundsOfLining = 30;
      }
-     //sit, jump, push, tear
+     //sit, jump, push, tear, cutLining
      public void sit()
      {
         wheels = 3;
@@ -35,5 +37,21 @@ public class Beanbag
      {
         cushion = false;
         System.out.println("There is a cushion: " + cushion + ", after a tear.");
+     }
+     public void cutLining(int poundsToCut)
+     {
+      if(poundsOfLining < poundsToCut)
+      {
+         System.out.println("Cannot cut that much beanbag lining");
+      }
+      if(poundsToCut < 0)
+      {
+          System.out.println("Cannot cut negative pounds");
+      }
+      else {
+         poundsOfLining-= poundsToCut;
+      }
+
+       
      }
 }
