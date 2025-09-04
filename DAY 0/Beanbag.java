@@ -3,7 +3,7 @@ public class Beanbag
     private int wheels;
     private double legs;
     private boolean cushion;
-    private char color;
+    private char firstColor;
     private String size;
     private String location;
     public int poundsOfLining;
@@ -12,7 +12,7 @@ public class Beanbag
         wheels = 4;
         legs = 3.58;
         cushion = true;
-        color = 'b';
+        firstColor = 'B';
         size = "large";  
         location = "Library";
         poundsOfLining = 30;
@@ -22,6 +22,7 @@ public class Beanbag
      {
         wheels = 3;
         System.out.println("There is: " + wheels + " wheels after sitting.");
+        System.out.println("Also the color's first letter is: " + firstColor);
      }
      public void jump()
      {
