@@ -11,6 +11,11 @@ public class Rectangle
     //     width = 8;
     // }
     //Constructor
+    public Rectangle()
+    {
+        length = 5;
+        width = 7;
+    }
     public Rectangle(int length, int width)
     {
         //initialize the private instance variables
@@ -48,5 +53,17 @@ public class Rectangle
     public double findDiagonal()
     {
         return Math.sqrt((length * length) + (width * width));
+    }
+    public String toString()
+    {
+        return "Length = " + length + ", and the Width = " + width + ".";
+    }
+    public boolean equals(Rectangle other)
+    {
+        if(this.length == other.length && this.width == other.width)
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -17,6 +17,11 @@ public class Beanbag
         location = "Library";
         poundsOfLining = 30;
      }
+     public String toString()
+      {
+         return("Wheels: " + wheels + ", Legs: " + legs + ", Cushion: " + cushion + ", First letter of the color: " 
+         + firstColor + ", Size: " + size + ", Location: " + location + ", Pounds of Lining: " + poundsOfLining + ".");
+      }
      //sit, jump, push, tear, cutLining
      public void sit()
      {
@@ -42,17 +47,25 @@ public class Beanbag
      public void cutLining(int poundsToCut)
      {
       if(poundsOfLining < poundsToCut)
+         {
+            System.out.println("Cannot cut that much beanbag lining");
+         }
+         if(poundsToCut < 0)
+         {
+            System.out.println("Cannot cut negative pounds");
+         }
+         else 
+         {
+            poundsOfLining-= poundsToCut;
+         }
+      }
+      public boolean equals(Beanbag other)
       {
-         System.out.println("Cannot cut that much beanbag lining");
+         if(wheels == other.wheels && legs == other.legs && cushion == other.cushion && firstColor == other.firstColor && this.size.equals(other.size) 
+         && this.location.equals(other.location) && poundsOfLining == other.poundsOfLining)
+         {
+            return true;
+         }
+         return false;
       }
-      if(poundsToCut < 0)
-      {
-          System.out.println("Cannot cut negative pounds");
-      }
-      else {
-         poundsOfLining-= poundsToCut;
-      }
-
-       
-     }
 }
