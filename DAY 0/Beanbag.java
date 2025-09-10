@@ -59,6 +59,67 @@ public class Beanbag
             poundsOfLining-= poundsToCut;
          }
       }
+   //    private int wheels;
+   //  private double legs;
+   //  private boolean cushion;
+   //  private char firstColor;
+   //  private String size;
+   //  private String location;
+   //  public int poundsOfLining;
+      public void setWheels(int newWheels)
+      {
+         wheels = newWheels;
+      }
+      public void setLegs(double newLegs)
+      {
+         legs = newLegs;
+      }
+      public void setCushion(boolean newCushion)
+      {
+         cushion = newCushion;
+      }
+      public void setFirstColor(char newColor)
+      {
+         firstColor = newColor;
+      }
+      public void setSize(String newSize)
+      {
+         size.equals(newSize);
+      }
+      public void setLocation(String newLocation)
+      {
+         location.equals(newLocation);
+      }
+      public void setLining(int newLiningPounds)
+      {
+         poundsOfLining = newLiningPounds;
+      }
+      
+      public int getWheels()
+      {
+         return wheels;
+      }
+      public double getLegs()
+      {
+         return legs;
+      }
+      public boolean getCushion()
+      {
+         return cushion;
+      }
+      public char getFirstColor(){
+         return firstColor;
+      }
+      public String getSize(){
+         return size;
+      }
+      public String getLocation(){
+         return location;
+      }
+      public int getPoundsOfLining(){
+         return poundsOfLining;
+      }
+
       public boolean equals(Beanbag other)
       {
          if(wheels == other.wheels && legs == other.legs && cushion == other.cushion && firstColor == other.firstColor && this.size.equals(other.size) 
