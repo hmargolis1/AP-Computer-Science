@@ -1,9 +1,7 @@
-public class RectangleTester 
-{
-    public static void main(String[] args) 
-    {
+public class RectangleTester {
+    public static void main(String[] args) {
         //declaration: type name + inisialization: new type()
-        Rectangle rec1 = new Rectangle(9,8 );
+        Rectangle rec1 = new Rectangle(9, 8);
         Rectangle rec3 = new Rectangle();
         System.out.println(" ----- Rec1 -----");
         System.out.println("Length: " + rec1.getLength());
@@ -17,6 +15,10 @@ public class RectangleTester
         System.out.println("Area: " + rec3.findArea());
         System.out.println("Perimeter: " + rec3.findPerimeter());
         System.out.println("Diagonal: " + rec3.findDiagonal());
+        System.out.println("----- Getters + Setters for Rec1-----");
+        System.out.println("Area: " + rec1.getArea());
+        System.out.println("Perimeter: " + rec1.getPerimeter());
+        System.out.println("Diagonal: " + rec1.getDiagonal());
         System.out.println(" ----- Setlengths + Change in Rec1 -----");
         rec1.setLength(15);
         rec1.setWidth(9);
