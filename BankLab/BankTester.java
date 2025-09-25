@@ -15,5 +15,15 @@ public class BankTester {
         System.out.println(bank2); // prints "This bank has 3 loan officers
         // and 5 tellers."
 
+        System.out.println("Loan Officers to Tellers ratio: " + bank1.getEmployeeRatio());
+
+        bank1.fireMembers(3, false);
+
+        bank1.transferEmployee(true);
+
+        System.out.println(bank1.toString());
+
+        System.out.println("The total salary of all bank tellers and loan officers is: " + bank1.totalSalary());
+
     }
 }

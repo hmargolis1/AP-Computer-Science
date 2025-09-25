@@ -56,4 +56,18 @@ public class Bank {
             numberOfTellers -= numberToFire;
         }
     }
+
+    public void transferEmployee(boolean fromLoanOfficer) {
+        if (fromLoanOfficer == true) {
+            numberOfLoanOfficers-= 1;
+            numberOfTellers+= 1;
+        }
+        else 
+        numberOfLoanOfficers+=1;
+        numberOfTellers-=1;
+    }
+
+    public int totalSalary() {
+        return (numberOfLoanOfficers * 75000) + (numberOfTellers * 45000);
+    }
 }
