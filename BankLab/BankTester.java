@@ -23,7 +23,8 @@ public class BankTester {
 
         System.out.println(bank1.toString());
 
-        System.out.println("The total salary of all bank tellers and loan officers is: " + bank1.totalSalary());
+        System.out.println("The total salary of all bank tellers and loan officers is: " 
+            + bank1.totalSalary());
 
     }
 }
