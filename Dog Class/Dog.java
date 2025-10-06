@@ -12,6 +12,9 @@ public class Dog {
         this.ownerName = ownerName;
         this.age = age;
         this.dogId = dogId;
+        this.dogChar = generateDogChar(this.dogId);
+        this.dogTag = generateDogTag();
+        this.stillInFacility = true;
     }
 
     public Dog() {
@@ -19,6 +22,9 @@ public class Dog {
         this.ownerName = "Jebadiah";
         this.age = 70;
         this.dogId = 132;
+        this.dogChar = generateDogChar(this.dogId);
+        this.dogTag = generateDogTag();
+        this.stillInFacility = true;
     }
 
     public String getName() {
@@ -77,7 +83,7 @@ public class Dog {
         this.stillInFacility = stillInFacility;
     }
 
-    public char generateDogChar() {
+    public static char generateDogChar(int dogId) {
         int hundreds = dogId/100;
         int tens = (dogId % 100) / 10;
         int ones = (dogId % 10);
@@ -88,8 +94,21 @@ public class Dog {
         return "" + dogId + dogChar;
     }
 
+    public static String pickup(Dog dog, String personName) {
+        if(personName == dog.ownerName) {
+            dog.stillInFacility = false;
+            return dog.name + " has been picked up by their owner " + dog.ownerName + ".";
+        }
+        else return dog.name + " cannot leave because " + personName + " is not their owner, saftey first!";
+    }
+
+    public static void checkIn(Dog dog, String personName) {
+        dog.ownerName = personName;
+        dog.stillInFacility = true;
+    }
+
     public String toString() {
-        if(!isStillInFacility()) {
+        if(isStillInFacility() == false) {
             return name + " is a good dog. They are " + age + " years old and belong to " 
             + ownerName 
             + ". They are currently not in our facility. For employee use only: DogTag is " 
@@ -104,8 +123,8 @@ public class Dog {
 
     public boolean equals(Dog other) {
         return this.name.equals(other.name) && 
-        this.ownerName.equals(ownerName) &&
+        this.ownerName.equals(other.ownerName) &&
         this.age == other.age &&
-        this.dogTag.equals(dogTag);
+        this.dogTag.equals(other.dogTag);
     }
 }
