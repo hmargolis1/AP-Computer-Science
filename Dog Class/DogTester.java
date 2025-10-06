@@ -8,6 +8,7 @@ public class DogTester {
 
 
         System.out.println("----- ToString -----");
+        System.out.println("");
         System.out.println(d1.toString());
         System.out.println(d2.toString());
         System.out.println(d3.toString());
@@ -15,6 +16,7 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- Setters && Getters -----");
+        System.out.println("");
         d1.setAge(8);
         d1.setName("Wilson");
         System.out.println("Get dog1's age: " + d1.getAge());
@@ -23,6 +25,7 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- Generating DogChar() -----");
+        System.out.println("");
         System.out.println(Dog.generateDogChar(145));
         System.out.println(Dog.generateDogChar(891));
         System.out.println(Dog.generateDogChar(132));
@@ -30,6 +33,7 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- Generating DogTag() -----");
+        System.out.println("");
         System.out.println(d1.generateDogTag());
         System.out.println(d2.generateDogTag());
         System.out.println(d3.generateDogTag());
@@ -37,6 +41,7 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- Pickup -----");
+        System.out.println("");
         Dog d4 = new Dog("Thompson", "Maria", 8, 981);
         System.out.println(Dog.pickup(d4, "Maria"));
         System.out.println(Dog.pickup(d1, "John"));
@@ -46,6 +51,7 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- CheckIn() -----");
+        System.out.println("");
         Dog d5 = new Dog("Harold", "Mikee", 99, 548);
         d5.setStillInFacility(false);
         Dog.checkIn(d5, "NewOwner");
@@ -55,12 +61,14 @@ public class DogTester {
 
         System.out.println("");
         System.out.println("----- ToString -----");
+        System.out.println("");
         System.out.println(d1.toString());
         System.out.println(d2.toString());
         System.out.println("");
 
         System.out.println("");
         System.out.println("----- EqualsOther -----");
+        System.out.println("");
         System.out.println(d1.equals(d2));
         System.out.println(d2.equals(d3));
         System.out.println(dogEquals1.equals(dogEquals2));
