@@ -3,6 +3,7 @@ public class DogTester {
         Dog d1 = new Dog("Tim", "Jim", 7, 145);
         Dog d2 = new Dog("Wally", "Thomas", 4, 891);
         Dog d3 = new Dog();
+        Dog d7 = new Dog("Yongo", "Thomas", 8, 8);
         Dog dogEquals1 = new Dog("Alfred", "Pam", 9, 189);
         Dog dogEquals2 = new Dog("Alfred", "Pam", 9, 189);
 
@@ -26,17 +27,17 @@ public class DogTester {
         System.out.println("");
         System.out.println("----- Generating DogChar() -----");
         System.out.println("");
-        System.out.println(Dog.generateDogChar(145));
-        System.out.println(Dog.generateDogChar(891));
-        System.out.println(Dog.generateDogChar(132));
+        System.out.println(PawesomeUtils.generateDogChar(145));
+        System.out.println(PawesomeUtils.generateDogChar(891));
+        System.out.println(PawesomeUtils.generateDogChar(132));
         System.out.println("");
 
         System.out.println("");
         System.out.println("----- Generating DogTag() -----");
         System.out.println("");
-        System.out.println(d1.generateDogTag());
-        System.out.println(d2.generateDogTag());
-        System.out.println(d3.generateDogTag());
+        System.out.println(PawesomeUtils.generateDogTag(d1.getDogId(), d1.getDogChar()));
+        System.out.println(PawesomeUtils.generateDogTag(d2.getDogId(), d2.getDogChar()));
+        System.out.println(PawesomeUtils.generateDogTag(d3.getDogId(), d3.getDogChar()));
         System.out.println("");
 
         System.out.println("");
@@ -54,7 +55,7 @@ public class DogTester {
         System.out.println("");
         Dog d5 = new Dog("Harold", "Mikee", 99, 548);
         d5.setStillInFacility(false);
-        Dog.checkIn(d5, "NewOwner");
+        PawesomeUtils.checkIn(d5, "NewOwner");
         System.out.println("In facility: " + d5.isStillInFacility());
         System.out.println("NewOwner: " + d5.getOwnerName());
         System.out.println("");
@@ -72,6 +73,27 @@ public class DogTester {
         System.out.println(d1.equals(d2));
         System.out.println(d2.equals(d3));
         System.out.println(dogEquals1.equals(dogEquals2));
+        System.out.println("");
+
+        System.out.println("----- ValidateDogId() -----");
+        System.out.println("");
+        System.out.println(PawesomeUtils.validateDogId(d1.getDogId()));
+        System.out.println(PawesomeUtils.validateDogId(34));
+        System.out.println(PawesomeUtils.validateDogId(10000));
+        System.out.println("");
+
+        System.out.println("----- ValidateDogTag() -----");
+        System.out.println(""); 
+        System.out.println("Validate d1: " + PawesomeUtils.validateDogTag(d1));
+        System.out.println("Validate d2: " + PawesomeUtils.validateDogTag(d2));
+        System.out.println("Validate d3: " + PawesomeUtils.validateDogTag(d3));
+        System.out.println("Validate d7: " + PawesomeUtils.validateDogTag(d7));
+        System.out.println("");
+
+        System.out.println("----- Convert Age -----");
+        System.out.println("");
+        System.out.println("Dog age to Human age: " + PawesomeUtils.convertAgeToHumanAge(d3));
+        System.out.println("Human age to Dog age: " + PawesomeUtils.converateAgetoDogYears(49));
         System.out.println("");
     }
 }
