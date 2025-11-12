@@ -42,18 +42,52 @@ public class RPSGame {
         return "scissors";
     }
 
+    public void setPlayerValues(String name, String choice) {
+        player.setName(name);
+        player.setChoice(choice);
+    }
+
     public void start() {
         Scanner scan = new Scanner(System.in);
         System.out.println("What is your name?: ");
         String name = scan.next();
         System.out.println("What is your choice (Rock, Paper, Scissors)?: ");
         String choice = scan.next();
+        int count = 0;
+        while(RPSGame.validateChoice(choice) == false && count < 2) {
+                count++;
+                System.out.println("What is your choice (Rock, Paper, Scissors)?: ");
+                choice = scan.next();
+        }
         scan.close();
-        while()
+        if(count >= 2) {
+            System.out.println("Too many invalid choice attempts, a random choice is given.");
+            choice.equals(RPSGame.generateRandomChoice());
+        }
+        setPlayerValues(name, choice);
     }
 
-    public void setPlayerValues(String name, String choice) {
-        player.setName(name);
-        player.setChoice(choice);
+    public boolean didPlayerWin() {
+        if (player.getChoice().equals("rock") && opponent.getChoice().equals("scissors")) {
+            return true;
+        }
+        if (player.getChoice().equals("scissors") && opponent.getChoice().equals("paper")) {
+            return true;
+        }
+        if (player.getChoice().equals("paper") && opponent.getChoice().equals("rock")) {
+            return true;
+        }
+        return false;
+    }
+    public String toString() {
+        String winOrLose = "won";
+        if (didPlayerWin() == true) {
+            return  player.getName() + " " + winOrLose + "! \n Congratulations!";
+        }
+        return  "Opponent won! \n Better luck next time!"; 
+    }
+
+    public String displayResults() {
+        
     }
 }
