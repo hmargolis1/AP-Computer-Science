@@ -14,8 +14,8 @@ public class Player {
     public void setChoice(String newChoice) {
         newChoice.toLowerCase();
         if (RPSGame.validateChoice(newChoice) == false) {
-            this.choice.equals(RPSGame.generateRandomChoice());
-        } else this.choice.equals(newChoice);
+            this.choice = RPSGame.generateRandomChoice();
+        } else this.choice = newChoice;
     }
     
     public String toString() {

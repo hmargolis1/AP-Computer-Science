@@ -80,14 +80,17 @@ public class RPSGame {
         return false;
     }
     public String toString() {
-        String winOrLose = "won";
         if (didPlayerWin() == true) {
-            return  player.getName() + " " + winOrLose + "! \n Congratulations!";
+            return  player.getName() + "won! \n Congratulations!";
         }
         return  "Opponent won! \n Better luck next time!"; 
     }
 
     public String displayResults() {
-        
+        String results = "== GAME RESULTS ==\n" + player.getName() + " chose " + player. getChoice() + "\nOpponent chose " + opponent.getChoice();
+        if(didPlayerWin() == true) {
+            results += "\n" + player.getName() + "won! \nCongratulations!";
+        } else results += "\nOpponent won! \nBetter luck next time!";
+        return results;
     }
 }

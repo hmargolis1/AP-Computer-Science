@@ -8,7 +8,11 @@ public class Robot {
     public Robot(int[] hallwayToClean, int startingPosition) {
         // to-do: implement constructor
         this.hallway = hallwayToClean;
+        if(startingPosition < 0) {
+            startingPosition = 0;
+        }
         this.position = startingPosition;
+        this.isFacingRight = true;
     }
 
     /*
@@ -16,8 +20,44 @@ public class Robot {
      * 
      * @return true if the robot is blocked by a wall, false otherwise
      */
+
+    public int[] getHallway() {
+        return hallway;
+    }
+
+    public void setHallway(int[] hallway) {
+        this.hallway = hallway;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public boolean isFacingRight() {
+        return isFacingRight;
+    }
+
+    public void setFacingRight(boolean isFacingRight) {
+        this.isFacingRight = isFacingRight;
+    }
+
+    public boolean hallwayCheck() {
+        if(hallway == null || position >= hallway.length || position < 0) {
+            return false;
+        }
+        for(int x = 0; x < hallway.length; x++) {
+            if(hallway[x] < 0 && x != position) {
+                hallway[x] = 0;
+            }
+        }
+        return true;
+    }
     public boolean isRobotBlockedByWall() {
-        if (position + 1 > hallway.length || position - 1 < 0) {
+        if (isFacingRight && position + 1 >= hallway.length || !isFacingRight && position - 1 < 0) {
             return true;
         }
         return false;
@@ -27,19 +67,29 @@ public class Robot {
      * Commands the robot to pick up an item, move forward or turn around
      */
     public void move() {
+        if(hallwayCheck() == false) {
+            System.out.println("That is an invalid Hallway/Position.");
+            return;
+        }
         if(hallway[position] > 0) {
             hallway[position]--;
-            if(hallway[position] == 0) {
-                return;
-            } else {
-                if (isRobotBlockedByWall() == true) {
-                    isFacingRight = !isFacingRight;
-                } else {
-                    position++;
-                }
+            if(isRobotBlockedByWall()) {
+            isFacingRight = !isFacingRight;
             }
+            return;
         }
-
+        if(hallway[position] == 0 && isFacingRight && !isRobotBlockedByWall()) {
+                position++;
+                return;
+            }
+        if(hallway[position] == 0 && !isFacingRight && !isRobotBlockedByWall()) {
+                position--;
+                return;
+            }
+        if(isRobotBlockedByWall()) {
+            isFacingRight = !isFacingRight;
+            return;
+        }
     }
 
     /**
@@ -52,8 +102,16 @@ public class Robot {
      */
 
     public int clearHall() {
+        if(hallwayCheck() == false) {
+            return 0;
+        }
         int count = 0;
-        System.out.println(.displayState());
+        displayState();
+        while(hallIsClear() == false) {
+            move();
+            count++;
+            displayState();
+        }
         return count;
     }
 
@@ -63,6 +121,9 @@ public class Robot {
      * @return a boolean value indicating if the hallway contains any items
      */
     public boolean hallIsClear() {
+        if(hallwayCheck() == false) {
+            return false;
+        }
         int checker = 0;
         for(int x = 0; x < hallway.length; x++) {
             checker += hallway[x];
@@ -77,22 +138,25 @@ public class Robot {
      * Displays the current state of the robot and the hallway.
      */
     public void displayState() {
+        if(hallwayCheck() == false) {
+            System.out.println("That is an invalid hallway/position");
+            return;
+        }
         String fullHallway = "";
         String robotSpot = "";
         String endHallway = "" + hallway[hallway.length - 1];
         for(int x = 0; x<hallway.length - 1; x++) {
             fullHallway += hallway[x] + " ";
         }
-        int y = 0;
-        while(y < position + 1) {
+        for(int y = 0; y<position * 2; y++) {
             robotSpot += " ";
-            y++;
+        }
+        if(isFacingRight) {
+            robotSpot = robotSpot + ">";
+        } else {
+            robotSpot = robotSpot + "<";
         }
         System.out.println(fullHallway + endHallway);
-        if(isFacingRight == true) {
-            System.out.println(robotSpot + ">");
-        } else {
-            System.out.println(robotSpot + "<");
-        }
+        System.out.println(robotSpot);
     }
 }
