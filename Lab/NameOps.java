@@ -17,20 +17,66 @@ public class NameOps {
     }
 
     public static String findFirstName(String name) {
-        return name.substring(0, indexOfFirstSpace(name) - 1);
+        int hasSpace = 0;
+        for (int x = 0; x < name.length(); x++) {
+            if (name.charAt(x) == ' ') {
+                hasSpace++;
+            }
+        }
+        if (hasSpace > 0) {
+            return name.substring(0, indexOfFirstSpace(name));
+        } else {
+            return name.substring(0);
+        }
     }
 
     public static String findLastName(String name) {
-        for(int x = name.length(); x < 0; x--) {
-            if(name.charAt(x) == ' ') {
-                return name.substring(x);
+        int numberOfSpaces = 0;
+        for (int x = 0; x < name.length(); x++) {
+            if (name.charAt(x) == ' ') {
+                numberOfSpaces++;
             }
+        }
+        if (numberOfSpaces == 2) {
+            return name.substring(indexOfSecondSpace(name));
+        }
+        if (numberOfSpaces == 1) {
+            return name.substring(indexOfFirstSpace(name));
         }
         return "";
     }
 
     public static String findMiddleName(String name) {
-        
+        int numberOfSpaces = 0;
+        for (int x = 0; x < name.length(); x++) {
+            if (name.charAt(x) == ' ') {
+                numberOfSpaces++;
+            }
+        }
+        if (numberOfSpaces == 2) {
+            return name.substring(
+                indexOfFirstSpace(name),
+                indexOfSecondSpace(name)
+            );
+        }
         return "";
+    }
+
+    public static String generateLastFirstMidInitial(String name) {
+        int numberOfSpaces = 0;
+        for (int x = 0; x < name.length(); x++) {
+            if (name.charAt(x) == ' ') {
+                numberOfSpaces++;
+            }
+        }
+        if (numberOfSpaces == 2) {
+            return findLastName(name) + ", "
+                + findFirstName(name) + " "
+                + findMiddleName(name).charAt(1) + ".";
+        }
+        if (numberOfSpaces == 1) {
+            return findLastName(name) + ", " + findFirstName(name);
+        }
+        return findFirstName(name);
     }
 }
