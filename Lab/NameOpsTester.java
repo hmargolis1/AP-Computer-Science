@@ -15,38 +15,38 @@ public class NameOpsTester {
         System.out.println(test3); // Elvis Aaron Presley is awesome!
         System.out.println();
 
-        // // testing indexOfFirstSpace()
-        // System.out.println("== Testing indexOfFirstSpace() ==");
-        // method = "indexOfFirstSpace";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.indexOfFirstSpace(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.indexOfFirstSpace(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.indexOfFirstSpace(name3);
-        // System.out.println(test1); // -1
-        // System.out.println(test2); // 5
-        // System.out.println(test3); // 5
-        // System.out.println();
+        // testing indexOfFirstSpace()
+        System.out.println("== Testing indexOfFirstSpace() ==");
+        method = "indexOfFirstSpace";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.indexOfFirstSpace(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.indexOfFirstSpace(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.indexOfFirstSpace(name3);
+        System.out.println(test1); // -1
+        System.out.println(test2); // 5
+        System.out.println(test3); // 5
+        System.out.println();
 
-        // // testing indexOfSecondSpace()
-        // System.out.println("== Testing indexOfSecondSpace() ==");
-        // method = "indexOfSecondSpace";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.indexOfSecondSpace(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.indexOfSecondSpace(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.indexOfSecondSpace(name3);
-        // System.out.println(test1); // -1
-        // System.out.println(test2); // -1
-        // System.out.println(test3); // 11
-        // System.out.println();
+        // testing indexOfSecondSpace()
+        System.out.println("== Testing indexOfSecondSpace() ==");
+        method = "indexOfSecondSpace";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.indexOfSecondSpace(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.indexOfSecondSpace(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.indexOfSecondSpace(name3);
+        System.out.println(test1); // -1
+        System.out.println(test2); // -1
+        System.out.println(test3); // 11
+        System.out.println();
 
-        // // testing findFirstName()
-        // System.out.println("== Testing findFirstName() ==");
-        // method = "findFirstName";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.findFirstName(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.findFirstName(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.findFirstName(name3);
-        // System.out.println(test1); // Cher
-        // System.out.println(test2); // Elton
-        // System.out.println(test3); // Elvis
-        // System.out.println();
+        // testing findFirstName()
+        System.out.println("== Testing findFirstName() ==");
+        method = "findFirstName";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.findFirstName(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.findFirstName(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.findFirstName(name3);
+        System.out.println(test1); // Cher
+        System.out.println(test2); // Elton
+        System.out.println(test3); // Elvis
+        System.out.println();
 
         // // testing findLastName()
         // System.out.println("== Testing findLastName() ==");

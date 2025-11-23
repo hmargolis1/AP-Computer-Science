@@ -1,11 +1,11 @@
 public class NameOps {
 
     public static String printMethodCall(String method, String name) {
-        return method + "(" + "\" + name + \" + ): ";
+        return method + "(\"" + name + "\"): ";
     }
 
     public static String whoIsAwesome(String name) {
-        return name + "is awesome!";
+        return name + " is awesome!";
     }
 
     public static int indexOfFirstSpace(String name) {
@@ -13,15 +13,15 @@ public class NameOps {
     }
 
     public static int indexOfSecondSpace(String name) {
-        return name.indexOf(" ", indexOfFirstSpace(name));
+        return name.indexOf(" ", indexOfFirstSpace(name) + 1);
     }
 
     public static String findFirstName(String name) {
-        return name.substring(0, indexOfFirstSpace(name) -1);
+        return name.substring(0, indexOfFirstSpace(name) - 1);
     }
 
     public static String findLastName(String name) {
-        for(int x =0; x<name.length(); x--) {
+        for(int x = name.length(); x < 0; x--) {
             if(name.charAt(x) == ' ') {
                 return name.substring(x);
             }
