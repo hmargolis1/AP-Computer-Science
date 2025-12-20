@@ -1,12 +1,12 @@
 public class CourseTester {
     public static void main(String[] args) {
-        int[] score1 = new int[] {84, 93, 23, 45};
-        int[] score2 = new int[] {78, 80, 88, 95};
-        int[] score3 = new int[] {84, 93, 23, 45};
+        int[] score1 = new int[] { 84, 93, 23, 45 };
+        int[] score2 = new int[] { 78, 80, 88, 95 };
+        int[] score3 = new int[] { 84, 93, 23, 45 };
         StudentRecord s1 = new StudentRecord("Johnson", score1);
         StudentRecord s2 = new StudentRecord("Shaniqua", score2);
         StudentRecord s3 = new StudentRecord("Johnson", score3);
-        StudentRecord[] students = new StudentRecord[] {s1, s2, s3};
+        StudentRecord[] students = new StudentRecord[] { s1, s2, s3 };
         Course student = new Course("Computer Science", students);
         System.out.println("Testing toString: " + s1.toString());
         System.out.println(s1.toString().equals("Johnson's scores: [84, 93, 23, 45]"));
@@ -36,5 +36,24 @@ public class CourseTester {
         System.out.println("-----");
         System.out.println("Testing calculateTestAverage: ");
         System.out.println(student.calculateTestAverage(1));
+        System.out.println("-----");
+        System.out.println("Testing isFull: ");
+        System.out.println(student.isFull());
+        System.out.println("-----");
+        System.out.println("Testing enrollStudent: ");
+        student.enrollStudent(s3);
+        System.out.println(student.toString());
+        System.out.println("-----");
+        System.out.println("Testing dropStudent: ");
+        System.out.println(student.dropStudent(s3));
+        System.out.println(student.toString());
+        System.out.println("-----");
+        System.out.println("Testing countEnrolledStudents: ");
+        System.out.println(student.countEnrolledStudents());
+        System.out.println("-----");
+        System.out.println("Testing increaseClassSizeBy: ");
+        student.increaseClassSizeBy(5);
+        System.out.println(student.toString());
+
     }
 }

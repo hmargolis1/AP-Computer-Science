@@ -35,7 +35,9 @@ public class StudentRecord {
         for (int x = 0; x < scores.length - 1; x++) {
             finalString += scores[x] + ", ";
         }
-
+        if (name == null) {
+            name = "Nullname";
+        }
         return name + "'s scores: " + "[" + finalString + end + "]";
     }
 
@@ -56,14 +58,14 @@ public class StudentRecord {
      * Precondition: 0 <= first < last < scores.length.
      *
      * @param first the first index of the scores array
-     * @param last the last index of the scores array
+     * @param last  the last index of the scores array
      * @return the average of the values in the given range
      */
     public double getAverage(int first, int last) {
         double total = 0.0;
         int count = 0;
 
-        for (int x = first; x <= last; x++) {
+        for (int x = first; x < last; x++) {
             total += scores[x];
             count++;
         }
@@ -116,7 +118,6 @@ public class StudentRecord {
                 return scores[testNumber];
             }
         }
-
         System.out.println("No Value, Given: ");
         return -1;
     }
