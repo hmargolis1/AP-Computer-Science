@@ -12,7 +12,7 @@ public class PurrfectUtils {
     public static char generateCatChar(String catId) {
         int sum = 0;
         for (int x = 0; x < catId.length(); x++) {
-            sum += catId.charAt(x);
+            sum += catId.charAt(x) - '0';
         }
         return (char) ((sum % 26) + 'A');
     }
@@ -21,23 +21,29 @@ public class PurrfectUtils {
         if (low > high) {
             int newLow = high;
             int newHigh = low;
-            return (int) (Math.random() * (newHigh - newLow)) + newLow;
+            return (int) (Math.random() * (newHigh - newLow + 1)) + newLow;
         }
-        return (int) (Math.random() * (high - low)) + low;
+        return (int) (Math.random() * (high - low + 1)) + low;
     }
 
     public static String validateCatId(String catId) {
-        if (Integer.valueOf(catId) >= 1000 && Integer.valueOf(catId) <= 9999) {
-            return catId;
+        try {
+            int currentId = Integer.parseInt(catId);
+            if (currentId >= 1000 && currentId <= 9999) {
+                return catId;
+            }
+        } catch (Exception e) {
+
         }
-        return Integer.toString((int) (Math.random() * 9999) + 1000);
+        int randomCatId = (int) (Math.random() * 9000) + 1000;
+        return Integer.toString(randomCatId);
     }
 
     public static int validateMoodLevel(int moodLevel) {
         if (moodLevel >= 0 && moodLevel <= 10) {
             return moodLevel;
         }
-        if(moodLevel < 0) {
+        if (moodLevel < 0) {
             return 0;
         }
         return 10;

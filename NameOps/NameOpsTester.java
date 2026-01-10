@@ -7,7 +7,7 @@ public class NameOpsTester {
         // testing whoIsAwesome()
         System.out.println("== Testing whoIsAwesome() ==");
         String method = "whoIsAwesome";
-        String test1 = NameOps.printMethodCall(method, name1) + NameOps.whoIsAwesome(name1); 
+        String test1 = NameOps.printMethodCall(method, name1) + NameOps.whoIsAwesome(name1);
         String test2 = NameOps.printMethodCall(method, name2) + NameOps.whoIsAwesome(name2);
         String test3 = NameOps.printMethodCall(method, name3) + NameOps.whoIsAwesome(name3);
         System.out.println(test1); // Cher is awesome!
@@ -54,7 +54,7 @@ public class NameOpsTester {
         test1 = NameOps.printMethodCall(method, name1) + NameOps.findLastName(name1);
         test2 = NameOps.printMethodCall(method, name2) + NameOps.findLastName(name2);
         test3 = NameOps.printMethodCall(method, name3) + NameOps.findLastName(name3);
-        System.out.println(test1); // 
+        System.out.println(test1); //
         System.out.println(test2); // John
         System.out.println(test3); // Presley
         System.out.println();
@@ -70,16 +70,16 @@ public class NameOpsTester {
         System.out.println(test3); // Aaron
         System.out.println();
 
-        // // testing generateLastFirstMidInitial()
-        // System.out.println("== Testing generateLastFirstMidInitial() ==");
-        // method = "generateLastFirstMidInitial";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.generateLastFirstMidInitial(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.generateLastFirstMidInitial(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.generateLastFirstMidInitial(name3);
-        // System.out.println(test1); // Cher
-        // System.out.println(test2); // John, Elton
-        // System.out.println(test3); // Presley, Elvis A.
-        // System.out.println();
+        // testing generateLastFirstMidInitial()
+        System.out.println("== Testing generateLastFirstMidInitial() ==");
+        method = "generateLastFirstMidInitial";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.generateLastFirstMidInitial(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.generateLastFirstMidInitial(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.generateLastFirstMidInitial(name3);
+        System.out.println(test1); // Cher
+        System.out.println(test2); // John, Elton
+        System.out.println(test3); // Presley, Elvis A.
+        System.out.println();
     }
 
 }

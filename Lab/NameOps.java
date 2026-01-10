@@ -38,10 +38,10 @@ public class NameOps {
             }
         }
         if (numberOfSpaces == 2) {
-            return name.substring(indexOfSecondSpace(name));
+            return name.substring(indexOfSecondSpace(name) + 1);
         }
         if (numberOfSpaces == 1) {
-            return name.substring(indexOfFirstSpace(name));
+            return name.substring(indexOfFirstSpace(name) + 1);
         }
         return "";
     }
@@ -55,9 +55,8 @@ public class NameOps {
         }
         if (numberOfSpaces == 2) {
             return name.substring(
-                indexOfFirstSpace(name),
-                indexOfSecondSpace(name)
-            );
+                    indexOfFirstSpace(name) + 1,
+                    indexOfSecondSpace(name));
         }
         return "";
     }
@@ -71,8 +70,8 @@ public class NameOps {
         }
         if (numberOfSpaces == 2) {
             return findLastName(name) + ", "
-                + findFirstName(name) + " "
-                + findMiddleName(name).charAt(1) + ".";
+                    + findFirstName(name) + " "
+                    + findMiddleName(name).charAt(0) + ".";
         }
         if (numberOfSpaces == 1) {
             return findLastName(name) + ", " + findFirstName(name);
