@@ -1,5 +1,6 @@
 public class Unit3Exercises {
     // Intended: return the average length of the strings in the array.
+    // Added null check removed bad count logic.
     public static double calculateAverageStringLength(String[] strs) {
         if (strs == null || strs.length == 0) {
             return 0.0;
@@ -17,6 +18,7 @@ public class Unit3Exercises {
     }
 
     // Intended: produce a new string with the characters of the input reversed.
+    // Added nullCheck, removed "right - 1", and removed unnessescary if statement.
     public static String reverseString(String str) {
         if (str == null) {
             throw new IllegalArgumentException();
@@ -36,6 +38,8 @@ public class Unit3Exercises {
         return new String(chars);
     }
 
+    // removed random even odd if statement, threw IllegalArgumentException, and
+    // adjusted how the max was created.
     public static int findMaxValue(int[] numbers) {
         if (numbers == null) {
             throw new IllegalArgumentException();
@@ -54,6 +58,8 @@ public class Unit3Exercises {
 
     // Intended: check whether the input string reads the same forwards and
     // backwards.
+    // Used reverse string to rewrite method, the issue before was in the int right
+    // declaration, while, and return statements.
     public static boolean isPalindrome(String str) {
         if (str == null) {
             throw new IllegalArgumentException();
@@ -68,6 +74,8 @@ public class Unit3Exercises {
     }
 
     // Intended: sum only the even numbers in the array.
+    // removed unnessescary if statement, and corrected the way sum adds the
+    // numbers/ the loop itself
     public static int sumEvenNumbers(int[] numbers) {
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
@@ -80,6 +88,7 @@ public class Unit3Exercises {
         return sum;
     }
 
+    // added null check and made i = 0
     public static int calculateSumOfSquares(int[] numbers) {
         if (numbers == null) {
             throw new IllegalArgumentException("That's null, not good.");
@@ -91,6 +100,7 @@ public class Unit3Exercises {
         return sum;
     }
 
+    // fixed negative check and threw IllegalArgumentException.
     public static int getNthFibonacci(int n) {
         if (n < 0) {
             throw new IllegalArgumentException();
@@ -105,6 +115,8 @@ public class Unit3Exercises {
         return b;
     }
 
+    // Super confused on how to print it in tester, so I wrote a print statment
+    // Corrected < to >, added null check
     public static void sortArrayDescending(int[] arr) {
         if (arr == null) {
             throw new IllegalArgumentException();
@@ -128,6 +140,7 @@ public class Unit3Exercises {
         System.out.println("}");
     }
 
+    // corrected >= to >, and null check
     public static String findLongestWord(String sentence) {
         if (sentence == null) {
             throw new IllegalArgumentException();
@@ -142,6 +155,7 @@ public class Unit3Exercises {
         return longestWord;
     }
 
+    // added negative check
     public static double calculateInterest(double principal, double rate, int years) {
         if (principal < 0 || rate < 0) {
             throw new IllegalArgumentException();
@@ -152,6 +166,7 @@ public class Unit3Exercises {
         return principal;
     }
 
+    // For these 5 I added null check and try catch for different exceptions
     public static int parsePositiveInteger(String str) {
         int number = Integer.parseInt(str);
         if (number > 0) {
