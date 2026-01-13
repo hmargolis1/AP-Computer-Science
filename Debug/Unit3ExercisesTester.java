@@ -20,6 +20,16 @@ public class Unit3ExercisesTester {
         testFindLongestWord();
         System.out.println("");
         testInterestCalculator();
+        System.out.println("");
+        testParsePositiveInteger();
+        System.out.println("");
+        testGetArrayElement();
+        System.out.println("");
+        testCalculateSquareRoot();
+        System.out.println("");
+        testSumArrayElements();
+        System.out.println("");
+        testCalculatePower();
     }
 
     public static void testCalculateStringLengthAverage() {
@@ -201,4 +211,59 @@ public class Unit3ExercisesTester {
         }
     }
 
+    public static void testParsePositiveInteger() {
+        String str = "10";
+        System.out.println("Expected 10: " + Unit3Exercises.parsePositiveInteger(str));
+        try {
+            str = "-10";
+            System.out.println("Expect Error: " + Unit3Exercises.parsePositiveInteger(str));
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public static void testGetArrayElement() {
+        String[] arr = { "The", "worm", "is", "cool" };
+        int index = 1;
+        System.out.println(Unit3Exercises.getArrayElement(arr, index));
+        try {
+            Unit3Exercises.getArrayElement(arr, 10);
+        } catch (NumberFormatException e) {
+            System.out.println("Error (intentional): " + e);
+        }
+        try {
+            arr = null;
+            index = 3;
+            Unit3Exercises.getArrayElement(arr, index);
+        } catch (Exception e) {
+            System.out.println("Error (Intentional): " + e);
+        }
+    }
+
+    public static void testCalculateSquareRoot() {
+        int number = 5;
+        System.out.println(Unit3Exercises.calculateSquareRoot(number));
+        try {
+            number = -5;
+            System.out.println(Unit3Exercises.calculateSquareRoot(number));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void testSumArrayElements() {
+        try {
+            int[] realArray = { 10, 13, 4, 5, 10 };
+            System.out.println(Unit3Exercises.sumArrayElements(realArray));
+            System.out.println(Unit3Exercises.sumArrayElements(null));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public static void testCalculatePower() {
+        System.out.println(Unit3Exercises.calculatePower(5, 2));
+        System.out.println(Unit3Exercises.calculatePower(5, -2));
+    }
 }

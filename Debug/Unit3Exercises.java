@@ -152,4 +152,56 @@ public class Unit3Exercises {
         return principal;
     }
 
+    public static int parsePositiveInteger(String str) {
+        int number = Integer.parseInt(str);
+        if (number > 0) {
+            return number;
+        }
+        number = 1;
+        throw new NumberFormatException();
+    }
+
+    public static String getArrayElement(String[] arr, int index) {
+        if (arr == null) {
+            throw new IllegalArgumentException();
+        }
+        if (index > arr.length) {
+            throw new NumberFormatException();
+        }
+        return arr[index];
+
+    }
+
+    public static double calculateSquareRoot(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Double.Nan");
+        }
+        return Math.sqrt(number);
+
+    }
+
+    public static int sumArrayElements(int[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException("For a Null Array");
+        }
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+
+    }
+
+    public static double calculatePower(double base, int exponent) {
+        try {
+            if (exponent < 0) {
+                throw new IllegalArgumentException();
+            }
+            return Math.pow(base, exponent);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+            return 1.0;
+        }
+    }
+
 }
