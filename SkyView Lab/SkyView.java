@@ -12,8 +12,7 @@ public class SkyView {
             throw new IllegalArgumentException("Negative Rows/Cols");
         }
         if (scanned.length < numberOfRows * numberOfCols) {
-            throw new IllegalArgumentException("Array does not fit these dimensions, "
-                    + "even though this was a precondition...");
+            throw new IllegalArgumentException("Array does not fit these dimensions");
         }
         view = new double[numberOfRows][numberOfCols];
         int count = 0;

@@ -105,30 +105,47 @@ public class Unit4Exercises {
 
     // // ArrayList Methods
 
-    // // Method 1: noNegatives
-    // public static ArrayList<Integer> noNegatives(ArrayList<Integer> nums) {
+    // Method 1: noNegatives
+    public static ArrayList<Integer> noNegatives(ArrayList<Integer> nums) {
+        ArrayList<Integer> nonNegativeArray = new ArrayList<>();
+        for (int count : nums) {
+            if (count >= 0) {
+                nonNegativeArray.add(count);
+            }
+        }
+        return nonNegativeArray;
 
-    // return new ArrayList<>();
+    }
 
-    // }
+    // Method 2: excludeTeenNumbers
+    public static ArrayList<Integer> excludeTeenNumbers(ArrayList<Integer> nums) {
+        ArrayList<Integer> newArray = new ArrayList<>();
+        for (int count : nums) {
+            if (!(count >= 13) && !(count <= 19)) {
+                newArray.add(count);
+            }
+        }
+        return newArray;
+    }
 
-    // // Method 2: excludeTeenNumbers
-    // public static ArrayList<Integer> excludeTeenNumbers(ArrayList<Integer> nums)
-    // {
-    // // to-do: implement the method
-    // return new ArrayList<>();
-    // }
+    // Method 3: appendY
+    public static ArrayList<String> appendY(ArrayList<String> strs) {
+        ArrayList<String> newArray = new ArrayList<>();
+        for (int i = 0; i < strs.size(); i++) {
+            if (strs.get(i).endsWith("y") == false) {
+                newArray.add(strs.get(i) + "y");
+            }
+        }
+        return newArray;
+    }
 
-    // // Method 3: appendY
-    // public static ArrayList<String> appendY(ArrayList<String> strs) {
-    // // to-do: implement the method
-    // return new ArrayList<>();
-    // }
-
-    // // Method 4: squarePlus10
-    // public static ArrayList<Integer> squarePlus10(ArrayList<Integer> nums) {
-    // // to-do: implement the method
-    // return new ArrayList<>();
-    // }
+    // Method 4: squarePlus10
+    public static ArrayList<Integer> squarePlus10(ArrayList<Integer> nums) {
+        ArrayList<Integer> newArray = new ArrayList<>();
+        for (int i = 0; i < nums.size(); i++) {
+            newArray.add(nums.get(i));
+        }
+        return new ArrayList<>();
+    }
 
 }
