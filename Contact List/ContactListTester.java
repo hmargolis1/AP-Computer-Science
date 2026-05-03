@@ -9,7 +9,7 @@ public class ContactListTester {
                 Arrays.asList("Alice", "Tommy", "Bobby", "Annabelle", "Samantha", "Samuel", "Alice"));
 
         // initializing a contact list
-        ContactList contactList = new ContactList();
+        ContactListOld contactList = new ContactListOld();
 
         System.out.println("=== Testing Adding Names ===");
         // testing the add method
