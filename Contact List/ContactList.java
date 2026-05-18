@@ -27,6 +27,6 @@ public class ContactList extends AbstractList {
     }
 
     public boolean remove(Contact contact) {
-
+        return true;
     }
 }
